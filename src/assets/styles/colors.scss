@@ -1,0 +1,39 @@
+:root {
+  --primary-100: rgb(129, 140, 248);
+  --primary-200: rgb(99, 102, 241);
+  --primary-300: rgb(67, 56, 202);
+
+  --neutral: color-mix(in srgb, rgb(115, 115, 115) 90%, var(--primary-200) 10%);
+
+  --white: color-mix(in srgb, rgb(255, 255, 255) 95%, var(--primary-200) 5%);
+  --black: color-mix(in srgb, rgb(20, 20,20) 95%, var(--primary-200) 5%);
+}
+
+
+// Text colors classes.
+.text-primary-100 {
+  color: var(--primary-100);
+}
+
+.text-primary-200 {
+  color: var(--primary-200);
+}
+
+.text-primary-300 {
+  color: var(--primary-300);
+}
+
+
+//Background colors classes.
+.bg-primary-100 {
+  background-color: var(--primary-100);
+}
+
+.bg-primary-200 {
+  background-color: var(--primary-200);
+}
+
+.bg-primary-300 {
+  background-color: var(--primary-300);
+}
+
