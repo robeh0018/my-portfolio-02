@@ -1,0 +1,50 @@
+<app-main-layout>
+  <div class="min-h-dvh flex flex-col-reverse gap-5 items-center justify-between lg:flex-row pt-32 md:pt-[5rem]">
+    <!--    Img -->
+    <section class="m-auto">
+
+      <app-sections-img imgPath="assets/images/undraw_about_me_re_82bv.svg"/>
+
+    </section>
+    <!--    About Content-->
+    <section class="flex flex-col gap-5">
+
+      <h2 class="animate-appear-top-to-bottom">About me</h2>
+
+      <p class="max-w-2xl text-neutral animate-appear-right-to-left">Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Aenean semper, ipsum
+        eget accumsan tincidunt, lectus
+        lacus commodo eros, in tincidunt lectus elit in orci. Phasellus et justo nisl. In id nunc tincidunt,
+        pellentesque eros vitae, ornare elit. Nunc non aliquet tortor.</p>
+
+      <article class="flex justify-between max-w-md animate-fade-in">
+        <!--Info grid-->
+        <div class="flex flex-col gap-5 w-full">
+          <span class="p">Name:</span>
+          <span class="p">DOB:</span>
+          <span class="p">Email:</span>
+          <span class="p">COB:</span>
+          <span class="p">Country:</span>
+          <span class="p">City:</span>
+        </div>
+
+        <div class="flex flex-col gap-5 w-full">
+
+          <span class="p text-neutral truncate">{{ me()?.name }}</span>
+          <span class="p text-neutral">{{ me()?.DOB }}</span>
+          <span class="p text-neutral">{{ me()?.email }}</span>
+          <span class="p text-neutral">{{ me()?.COB }}</span>
+          <span class="p text-neutral">{{ me()?.currentCountry }}</span>
+          <span class="p text-neutral">{{ me()?.currentCity }}</span>
+        </div>
+      </article>
+
+      <!--Work Status alert-->
+
+      <p class="alert animate-appear-right-to-left">Available for freelance or full time work.</p>
+
+
+      <button class="button-primary animate-appear-bottom-to-top">DOWNLOAD CV</button>
+    </section>
+  </div>
+</app-main-layout>

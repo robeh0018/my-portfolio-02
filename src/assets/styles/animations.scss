@@ -1,0 +1,126 @@
+// Fade in
+.animate-fade-in {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// AppearBottomToTop
+.animate-appear-bottom-to-top {
+  animation-name: appearBottomToTop;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+
+@keyframes appearBottomToTop {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// AppearTopToBottom
+.animate-appear-top-to-bottom {
+  animation-name: appearTopToBottom;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+
+@keyframes appearTopToBottom {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+// AppearRightToLeft
+.animate-appear-right-to-left {
+  animation-name: appearRightToLeft;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+@keyframes appearRightToLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+// AppearLeftToRight
+.animate-appear-left-to-right {
+  animation-name: appearLeftToRight;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+@keyframes appearLeftToRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+// Scroll animation
+.animate-background-on-scroll {
+  animation-name: background-color-on-scroll;
+  animation-timeline: scroll();
+  animation-fill-mode: both;
+  animation-range-end: cover 1rem;
+}
+
+@keyframes background-color-on-scroll {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: var(--black-opacity);
+  }
+}

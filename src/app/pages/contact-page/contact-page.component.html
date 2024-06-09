@@ -1,0 +1,131 @@
+<app-main-layout>
+  <div
+    class="min-h-dvh flex flex-col gap-20 items-center justify-between pt-32 pb-20 lg:pb-0 lg:flex-row md:pt-32 lg:pt-0">
+
+    <!--    Contact form -->
+    <section class="space-y-5 w-full md:max-w-xl">
+      <span class="h4">Drop Me a Line</span>
+
+      <p class="text-neutral">I always looking for the next great project</p>
+
+
+      <form
+        action="https://formspree.io/f/xrgnwydy"
+        class="flex flex-col gap-5"
+        id="contactForm"
+        method="post">
+
+        <!--Email-->
+        <div class="flex flex-col gap-2">
+          <label for="email">E-MAIL</label>
+
+          <input
+            class=""
+            id="email"
+            name="email"
+            placeholder="Your email"
+            required
+            type="email"
+          >
+        </div>
+
+        <!--Message-->
+        <div class="flex flex-col gap-2">
+          <label for="message">MESSAGE</label>
+
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Drop me a line"
+            required
+            rows="5"
+          ></textarea>
+        </div>
+
+
+        <!-- Name and submit button -->
+        <div class="flex gap-5">
+
+          <!--Name -->
+          <div class="flex flex-col gap-2 w-full">
+            <label for="name">NAME</label>
+
+            <input
+              id="name"
+              name="name"
+              placeholder="Your name"
+              required
+              type="text"
+            >
+          </div>
+
+          <!--          Submit button-->
+          <button
+            class="button-primary mt-auto"
+            type="submit"
+          >
+            Send
+          </button>
+        </div>
+
+      </form>
+    </section>
+    <!--    Social media -->
+
+    <section class="space-y-5 w-full md:max-w-xl">
+      <span class="h4">Get in Touch</span>
+
+      <p class="text-neutral max-w-md">I always looking for the next great project. I always looking for the next great
+        project</p>
+
+      <div class="flex items-center gap-2">
+        <ng-icon class="text-primary-200" name="ionMailSharp" size="20"/>
+        <span>{{ me()?.email }}</span>
+      </div>
+
+      <!--Divider-->
+      <div class="divider"></div>
+
+
+      <article class="space-y-5">
+        <span class="h5">I am on Social</span>
+
+        <ul class="grid grid-cols-2 gap-y-5">
+
+          <li class="link me-auto">
+            <a
+              class="flex items-center gap-2"
+              [href]="me()?.facebookLink"
+            >
+              <ng-icon name="ionLogoFacebook" size="20"/>
+              <span class="text-neutral">Facebook</span>
+            </a>
+          </li>
+
+          <li class="link me-auto">
+            <a
+              class="flex items-center gap-2"
+              [href]="me()?.linkedinLink"
+            >
+              <ng-icon name="ionLogoLinkedin" size="20"/>
+              <span class="text-neutral">LinkedIn</span>
+            </a>
+          </li>
+
+          <li class="link me-auto">
+            <a
+              class="flex items-center gap-2"
+              [href]="me()?.githubLink"
+            >
+              <ng-icon name="ionLogoGithub" size="20"/>
+              <span class="text-neutral">Github</span>
+            </a>
+          </li>
+        </ul>
+
+      </article>
+
+    </section>
+
+  </div>
+</app-main-layout>

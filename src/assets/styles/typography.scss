@@ -1,5 +1,5 @@
 // Heading
-h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
   font-family: "Poetsen One", sans-serif;
   font-weight: 500;
   letter-spacing: 0.3rem;
@@ -22,11 +22,21 @@ h4, .h4 {
   font-size: 2rem;
 }
 
+h5, .h5 {
+  font-size: 1.7rem;
+}
+
 
 //Paragraph
 p, .p {
   font-weight: 400;
   letter-spacing: 0.1rem;
-  line-height: 1.2;
-  font-size: 1.2rem;
+  line-height: 1.225rem;
+  font-size: 1.05rem;
+}
+
+.tag {
+  font-style: italic;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }

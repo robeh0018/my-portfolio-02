@@ -1,0 +1,36 @@
+<app-main-layout>
+  <div class="min-h-dvh flex flex-col gap-16 justify-center items-center pt-32 pb-10 md:p-0">
+    <h2 class="text-center">My Skills</h2>
+
+    <p class="text-neutral text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, consectetur adipiscing
+      elit.</p>
+
+    <section class=" w-full grid grid-cols-1 gap-5 place-content-center align-middle sm:grid-cols-2">
+
+      @for (technology of skills(); track $index) {
+
+        <article class="relative md:max-w-xs mx-auto w-full">
+          <div class="flex relative">
+            <span>{{ technology.name }}</span>
+
+            <!--Skill percent-->
+            <span
+              [ngStyle]="{'margin-left': technology.percentOfLearning - 9 + '%'}"
+              class="skills-bar-percent">
+              {{ technology.percentOfLearning + '%' }}
+            </span>
+          </div>
+
+          <!--Skill bar-->
+          <div class="skills-bar-container">
+            <div
+              [ngStyle]="{'max-width': technology.percentOfLearning + '%'}"
+              class="skills-bar"></div>
+          </div>
+        </article>
+      }
+
+    </section>
+
+  </div>
+</app-main-layout>

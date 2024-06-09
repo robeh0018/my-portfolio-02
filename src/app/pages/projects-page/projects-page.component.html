@@ -1,0 +1,56 @@
+<app-main-layout>
+  <div class="min-h-dvh space-y-10 pt-32 pb-10 md:pb-0">
+
+    <h2 class="text-center">Projects</h2>
+
+    <!--Project list-->
+    <section class="grid grid-cols-1 place-content-center gap-5 lg:grid-cols-2">
+
+      @for (project of projects(); track $index) {
+
+        <!--Project-->
+        <article
+          [ngClass]="$odd ? 'animate-appear-right-to-left' : 'animate-appear-left-to-right'"
+          class="relative grid grid-cols-2 max-w-lg m-auto"
+        >
+
+          @for (_ of Array.from({length: 4}); let i = $index; track i) {
+            <!--Project img-->
+            <img
+              class="project-img aspect-video"
+              alt="web_projects"
+              height="426"
+              width="640"
+              [ngSrc]="project.images[i]"
+              priority
+            >
+          }
+
+          <!--Project content-->
+          <div class="project-content flex flex-col items-center gap-5 p-1 justify-center sm:p-5">
+
+            <!--        Project title-->
+            <p class="text-primary-200 h4">{{ project.title }}</p>
+
+            <!--Project technologies-->
+            <div class="flex gap-5">
+
+              @for (technology of project.technologies; track $index) {
+                <p class="tag">{{ technology }}</p>
+              }
+            </div>
+
+            <!--Project links-->
+            <div class="absolute right-0 bottom-0 m-1 sm:m-5 space-x-5">
+              <button class="link text-sm" [routerLink]="'/projects/' + project.id">See More</button>
+
+              <button class="link text-sm overflow-hidden"><a [href]="project.liveDemoLink">Visit</a></button>
+
+              <button class="link text-sm overflow-hidden"><a [href]="project.githubLink">Repository</a></button>
+            </div>
+          </div>
+        </article>
+      }
+    </section>
+  </div>
+</app-main-layout>

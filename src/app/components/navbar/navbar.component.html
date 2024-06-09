@@ -1,0 +1,49 @@
+<nav
+  [ngClass]="isNavbarCollapsed()  ? 'bg-black-opacity' : 'animate-background-on-scroll' "
+  class="px-5 md:px-20 lg:px-40">
+  <a class="logo antialiased" routerLink="/home">
+    <span class="text-primary-200">R</span>Padilla
+  </a>
+
+  <!--  Desktop menu list-->
+  <ul class="items-center gap-5 hidden lg:flex">
+
+    @for (navbarItem of navBarItems(); track $index) {
+      <li class="overflow-x-hidden py-1.5">
+        <a routerLinkActive="active-link" class="py-1.5 px-0.5 link"
+           [routerLink]="'/' + navbarItem.toLocaleLowerCase()">
+          {{ navbarItem }}
+        </a>
+      </li>
+    }
+  </ul>
+
+  <!--   Mobile menu-->
+
+  <!--Menu button-->
+  <button
+    (click)="toggleNavbarCollapsed()"
+    (keyup.escape)="isNavbarCollapsed.set(false)"
+    [ngClass]="!isNavbarCollapsed() ? 'open-menu-button' : 'close-menu-button'"
+    class="flex lg:hidden">
+    <span class="sr-only">Menu</span>
+  </button>
+
+  <!--  Mobile menu list -->
+  <ul
+    [ngClass]="isNavbarCollapsed() ? 'open' : 'close'"
+    class="flex flex-col items-center gap-5 responsive-menu lg:hidden">
+
+    @for (navbarItem of navBarItems(); track $index) {
+      <li class="overflow-x-hidden py-1.5">
+        <a routerLinkActive="active-link" class="py-1.5 px-0.5 link"
+           [routerLink]="'/' + navbarItem.toLocaleLowerCase()"
+           (click)="closeNavbar()"
+        >
+          {{ navbarItem }}
+        </a>
+      </li>
+    }
+  </ul>
+
+</nav>

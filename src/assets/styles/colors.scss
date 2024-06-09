@@ -1,12 +1,14 @@
 :root {
-  --primary-100: rgb(129, 140, 248);
-  --primary-200: rgb(99, 102, 241);
-  --primary-300: rgb(67, 56, 202);
+  --primary-100: rgb(236, 129, 103);
+  --primary-200: rgb(231, 112, 84);
+  --primary-300: rgb(211, 93, 68);
+  --primary-opacity: rgb(231, 112, 84, 0.2);
 
-  --neutral: color-mix(in srgb, rgb(115, 115, 115) 90%, var(--primary-200) 10%);
+  --neutral: color-mix(in srgb, rgb(115, 115, 115) 85%, var(--primary-200) 15%);
 
   --white: color-mix(in srgb, rgb(255, 255, 255) 95%, var(--primary-200) 5%);
-  --black: color-mix(in srgb, rgb(20, 20,20) 95%, var(--primary-200) 5%);
+  --black: color-mix(in srgb, rgb(20, 20, 20) 95%, var(--primary-200) 5%);
+  --black-opacity: color-mix(in srgb, rgb(20, 20, 20, 0.9) 95%, var(--primary-200) 5%);
 }
 
 
@@ -23,6 +25,10 @@
   color: var(--primary-300);
 }
 
+.text-neutral {
+  color: var(--neutral);
+}
+
 
 //Background colors classes.
 .bg-primary-100 {
@@ -35,5 +41,9 @@
 
 .bg-primary-300 {
   background-color: var(--primary-300);
+}
+
+.bg-black-opacity {
+  background-color: var(--black-opacity);
 }
 

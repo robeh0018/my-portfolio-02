@@ -1,0 +1,71 @@
+.link, .active-link {
+  letter-spacing: 0.1rem;
+  position: relative;
+  transition: color 400ms ease;
+  padding-bottom: 0.5rem;
+  overflow-x: hidden !important;
+}
+
+.link:hover {
+  color: var(--primary-200);
+}
+
+.link::before, .link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 50%;
+  background-color: var(--primary-200);
+
+}
+
+.link::before {
+  left: -100%;
+  transition: left 400ms ease;
+}
+
+.link:hover::before {
+  left: 0;
+}
+
+.link::after {
+  right: -100%;
+  transition: right 400ms ease;
+}
+
+.link:hover::after {
+  right: 0;
+}
+
+//Active-link
+.active-link {
+  color: var(--primary-200);
+}
+
+.active-link:hover {
+  color: var(--primary-300);
+}
+
+.active-link::before, .active-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--primary-200);
+  transition: all 400ms linear;
+}
+
+.active-link::before {
+  left: 0;
+}
+
+.active-link::after {
+  right: 0;
+}
+
+.active-link:hover::before,
+.active-link:hover::after {
+  background-color: var(--primary-300);
+}

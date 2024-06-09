@@ -1,0 +1,89 @@
+<!--Project top menu.-->
+<div
+  class="submenu animate-background-on-scroll overflow-hidden px-5 flex gap-5 md:flex-row md:justify-between md:px-20 lg:px-40 ">
+  <h2
+    class="h5 animate-appear-bottom-to-top">{{ project()?.title }}</h2>
+
+  <div class="flex items-center gap-2 ms-auto">
+
+    <a [href]="project()?.githubLink"
+       class="button-outlined button-sm flex items-center gap-2 animate-appear-left-to-right">
+      <ng-icon name="ionLogoGithub" size="20"/>
+      <span class="hidden sm:block">REPOSITORY</span>
+    </a>
+
+    <a
+      [href]="project()?.liveDemoLink"
+      class="button-primary button-sm animate-appear-right-to-left">
+      VISIT
+    </a>
+
+  </div>
+</div>
+
+<app-main-layout>
+  <div class="min-h-dvh flex flex-col-reverse gap-32 items-center pt-40 pb-10">
+
+    @for (projectSection of projectFeatures(); track $index) {
+
+      <!--Project Feature -->
+        <!--      <section class="grid grid-cols-1 lg:grid-cols-2 items-center gap-5">-->
+      <section
+        [ngClass]="$even ? 'lg:flex-row-reverse' : 'lg:flex-row'"
+        class="flex flex-col items-center gap-5">
+
+        <!--Section images recommended 2 images as more-->
+        <div
+          animate-when-viewport
+          [animation]="$even ? 'appear-right-to-left' : 'appear-left-to-right'"
+          class="grid max-w-lg mx-auto gap-1 w-full">
+          @for (img of projectSection.images; track $index) {
+
+            <img
+              [ngSrc]="img"
+              alt="web_projects"
+              class=" mx-auto"
+              priority
+              width="400"
+              height="205"
+            >
+          }
+        </div>
+
+        <!--Section content-->
+        <article class="h-full flex flex-col justify-center gap-5">
+          <span
+            animate-when-viewport
+            animation="appear-top-to-bottom"
+            class="h5 text-primary-200">{{ projectSection.title }}</span>
+
+          <p
+            class="text-neutral"
+            animate-when-viewport
+            [animation]="$even ? 'appear-left-to-right' : 'appear-right-to-left'"
+          >{{ projectSection.description }}</p>
+
+
+          <!--        Used technologies-->
+          <span
+            animate-when-viewport
+            animation="appear-bottom-to-top"
+            class="h5">Used Technologies</span>
+
+
+          <!--Technologies list-->
+          <ul
+            animate-when-viewport
+            animation="appear-bottom-to-top"
+            class="flex gap-5 text-primary-200">
+            @for (technology of projectSection.technologies; track $index) {
+              <li><span class="tag">{{ technology }}</span></li>
+            }
+          </ul>
+        </article>
+      </section>
+
+    }
+
+  </div>
+</app-main-layout>

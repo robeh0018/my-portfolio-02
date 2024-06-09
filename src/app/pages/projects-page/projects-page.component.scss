@@ -1,0 +1,15 @@
+.project-content {
+  position: absolute;
+  inset: 0;
+  background-color: var(--black-opacity);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.project-content:hover {
+  opacity: 1;
+}
+
+.project-img {
+  border: 1px solid var(--black);
+}
