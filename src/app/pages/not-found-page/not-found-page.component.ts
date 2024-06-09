@@ -1,5 +1,4 @@
 import {Component, inject} from '@angular/core';
-import {Location} from "@angular/common";
 import {MainLayoutComponent} from "../../layout";
 import {SectionsImgComponent} from "../../components";
 import {Router} from "@angular/router";
